@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet"  href="../assets/css/style.css">
+    <meta charset="UTF-8">
+    <title>viu-detail</title>
+</head>
+<body onload="focus_handler()">
+
+<div class="detail-page-wrapper">
+<div class="side-nav-and-detail-wrapper">
+    <div class="side-nav-contaier">
+
+        <ul class="side-nav-onhover " id="side-nav" tabindex="0" onkeydown="focus_handler(event)">
+            <li class="search-onhover side-nav" id="nav1" tabindex="0">
+                <span class="search-icon-onhover">&nbsp;</span>
+                <span class="search-name-onhover">&nbsp;Search</span>
+            </li>
+            <li class="home-onhover side-nav" tabindex="0" id="nav2"  >
+                <span class="home-icon-onhover">&nbsp;</span>
+                <span class="home-name-onhover">&nbsp;Home</span>
+            </li>
+            <li class="viu-onhover side-nav" tabindex="0" id="nav3"  >
+                <span class="viu-icon-onhover">&nbsp;</span>
+                <span class="viu-name-onhover">&nbsp;Origionals</span>
+            </li>
+            <li class="profile-onhover side-nav" tabindex="0" id="nav4" >
+                <span class="profile-icon-onhover">&nbsp;</span>
+                <span class="profile-name-onhover">User</span>
+            </li>
+            <li class="settings-onhover side-nav" tabindex="0" id="nav5" >
+                <span class="settings-icon-onhover">&nbsp;</span>
+                <span class="settings-name-onhover">Settings</span>
+            </li>
+        </ul>
+
+
+    </div>
+
+    <div class="detail-container">
+        <ul class="logo-container">
+            <li class="logo-name"></li>
+            <li class="logo"></li>
+        </ul>
+
+        <ul class="title-and-description">
+            <li class="title-li">
+                <h2 class="title">Rowdy hero</h2>
+            </li>
+            <li class="short-description-li">
+                <span class="short-description">2019</span>
+                <span class="short-description">English</span>
+                <span class="short-description">drama</span>
+                <span class="short-description-age">18+</span>
+            </li>
+            <li class="description">
+                <p class="description-para">
+                    A gripping action movie about Maari who goes
+                    to jail after murdering a powerful goon.
+                    He returns and finds out that his...
+                </p>
+            </li>
+            <li class="play-btn" tabindex="0">
+                <div class="play-btn-div">
+                    <span class="play-btn-icon">&nbsp;</span>
+                    <span class="play-btn-text">play</span>
+                </div>
+            </li>
+
+            <li class="slider-dots">
+                <span class="dots">&nbsp;</span>
+                <span class="dots">&nbsp;</span>
+                <span class="dots">&nbsp;</span>
+                <span class="dots">&nbsp;</span>
+                <span class="dots">&nbsp;</span>
+                <span class="dots">&nbsp;</span>
+            </li>
+         </ul>
+
+
+    </div>
+
+    <div class="rails-container" >
+        <h3 class="rail1-title">Trending This Week</h3>
+        <ul class="rail-1" id="rail-1" tabindex="0"  onkeydown="focus_handler(event)">
+            <li class="rail-card rail-card1" id="rail-card1" tabindex="0">  <span class="viu-org1"></span></li>
+            <li class="rail-card rail-card2" id="rail-card2" tabindex="0">  <span class="viu-org2"></span></li>
+            <li class="rail-card rail-card3" id="rail-card3" tabindex="0">  <span class="viu-org3"></span></li>
+            <li class="rail-card rail-card4" id="rail-card4" tabindex="0">  <span class="viu-org4"></span></li>
+            <li class="rail-card rail-card5" id="rail-card5" tabindex="0">  <span class="viu-org5"></span></li>
+        </ul>
+
+        <h3 class="rail2-title">Viu Premium</h3>
+        <ul class="rail-2" id="rail-2" tabindex="0" onkeydown="focus_handler(event)">
+            <li class="rail2-card rail2-card1" id="rail2-card1" tabindex="0">  <span class="viu-org1"></span></li>
+            <li class="rail2-card rail2-card2" id="rail2-card2" tabindex="0">  <span class="viu-org2"></span></li>
+            <li class="rail2-card rail2-card3" id="rail2-card3" tabindex="0">  <span class="viu-org3"></span></li>
+            <li class="rail2-card rail2-card4" id="rail2-card4" tabindex="0">  <span class="viu-org4"></span></li>
+            <li class="rail2-card rail2-card5" id="rail2-card5" tabindex="0">  <span class="viu-org5"></span></li>
+        </ul>
+    </div>
+
+</div>
+</div>
+</body>
+<script>
+
+function focus_handler(event){
+     document.getElementById('rail-card1').focus();
+
+     switch (event.keyCode) {
+         case 37:
+             if (event.target.previousElementSibling) {
+                 event.target.previousElementSibling.focus();
+             }
+             else if(event.target.previousElementSibling==null){
+                 document.getElementById('side-nav').classList.add("side-nav-onhover1");
+                 document.getElementById('nav1').focus();
+
+             }
+             break;
+
+         case 38:
+             if(event.target.parentElement.id == 'side-nav'){
+                 document.getElementById('side-nav').classList.add("side-nav-onhover1");
+                 document.getElementById('nav1').focus();
+                 if (event.target.previousElementSibling) {
+                     event.target.previousElementSibling.focus();
+                 }
+             } else {
+                 document.getElementById('side-nav').classList.remove("side-nav-onhover1");
+                 document.getElementById('rail-card1').focus();
+             }
+             break;
+         case 39:
+             document.getElementById('side-nav').classList.remove("side-nav-onhover1");
+             document.getElementById('rail-card1').focus();
+             if (event.target.nextElementSibling) {
+                 event.target.nextElementSibling.focus();
+             }
+             break;
+
+         // case 39:
+         //     document.getElementById('side-nav').classList.remove("side-nav-onhover1");
+         //     document.getElementById('rail-card1').focus();
+         //     if(event.target.parentElement.id =='rail-1') {
+         //         // console.log(event.target.nextElementSibling);
+         //         if (event.target.nextElementSibling) {
+         //             event.target.nextElementSibling.focus();
+         //         }
+         //     }
+         //
+         //     else if(event.target.nextElementSibling==null){
+         //         document.getElementById('rail-card1').focus();
+         //         document.getElementById('side-nav').classList.remove("side-nav-onhover1");
+         //         // if (event.target.nextElementSibling) {
+         //         //     event.target.nextElementSibling.focus();
+         //         // }
+         //     }
+         //
+         //     break;
+
+         case 40:
+             document.getElementById('side-nav').classList.remove("side-nav-onhover1");
+             document.getElementById('rail2-card1').focus();
+
+             if(event.target.parentElement.id == 'side-nav'){
+                 document.getElementById('side-nav').classList.add("side-nav-onhover1");
+                 document.getElementById('nav1').focus();
+                 if (event.target.nextElementSibling) {
+                     event.target.nextElementSibling.focus();
+                 }
+             }
+             break;
+     }
+    }
+
+</script>
+</html>
